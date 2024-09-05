@@ -1,6 +1,6 @@
-![licença](https://img.shields.io/badge/any%20lincensa%20MIT)
-
-
+![versão npm](https://img.shields.io/badge/npm-10.2.4-blue)
+![versão next](https://img.shields.io/badge/next-14.2.7-blue)
+![versão tailwind](https://img.shields.io/badge/tailwindcss-^3.4.10-blue)
 
 
 
