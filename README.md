@@ -1,5 +1,5 @@
 <h1> 
-	Frontend - Sistema de Gerenciamento Laboratorial
+	Front-end - Sistema de Gerenciamento Laboratorial
 </h1>
 
 ![licensa](https://img.shields.io/badge/license-MIT-green)
