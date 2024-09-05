@@ -12,9 +12,8 @@
 
 
 <h1> 
-	Frontend - Sistema de Gerenciamento Laboratorial
+	Navegação
 </h1>
-
 
 <!--ts-->
    * [Instalação](#instalacao)
