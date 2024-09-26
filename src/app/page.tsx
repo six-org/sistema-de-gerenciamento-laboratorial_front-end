@@ -12,7 +12,7 @@ import imgBasicLab from "../../public/img/login/basic-lab.webp";
 
 const home = () => {
   return (
-    <main className="h-screen w-screen">
+    <>
       <div className="grid grid-cols-2 w-full h-full">
         <div className="relative h-full w-full">
           <figure className="h-full w-full relative after:absolute after:inset-0 after:bg-primary-pure/20">
@@ -44,7 +44,7 @@ const home = () => {
                 <p className="text-[1rem] text-neutral-light">
                   Continuar com...
                 </p>
-                
+
                 {/* Lista de logins alternativos */}
                 <ul className="w-full flex flex-wrap items-center justify-between">
                   <li>
@@ -65,7 +65,7 @@ const home = () => {
 
         </div>
       </div>
-    </main>
+    </>
   )
 }
 
