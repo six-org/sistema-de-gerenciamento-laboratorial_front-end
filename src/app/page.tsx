@@ -1,3 +1,5 @@
+'use client'
+
 import Image from "next/image";
 import { Input } from "@/components/ui/input"
 import Link from 'next/link'
@@ -8,6 +10,9 @@ import { FcGoogle } from "react-icons/fc";
 
 /* Importações de URL de imagens */
 import imgBasicLab from "../../public/img/login/basic-lab.webp";
+import { signIn } from "next-auth/react";
+
+import Component from "../../components/teste";
 
 
 const home = () => {
@@ -48,9 +53,11 @@ const home = () => {
                 {/* Lista de logins alternativos */}
                 <ul className="w-full flex flex-wrap items-center justify-between">
                   <li>
-                    <Link className="overflow rounded-[.2rem] p-[.5rem] transition duration-[.3s] linear bg-neutral-light/5 hover:bg-neutral-light/10 focus-visible:bg-neutral-light/10 w-[8rem] inline-flex justify-center" href="#">
+                    {/*<button onClick={()=>{signIn('google')}} className="overflow rounded-[.2rem] p-[.5rem] transition duration-[.3s] linear bg-neutral-light/5 hover:bg-neutral-light/10 focus-visible:bg-neutral-light/10 w-[8rem] inline-flex justify-center">
                       <FcGoogle className="text-[2.5rem]" />
-                    </Link>
+  </button>*/}
+
+                    <Component />
                   </li>
                 </ul>
               </div>
