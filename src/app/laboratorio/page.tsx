@@ -1,5 +1,5 @@
 
-import NavegacaoUser from "../ui/nav/navegacaoUser";
+import NavegacaoUser from "../../../components/navegacaoUser";
 
 const laboratorio = () => {
 
