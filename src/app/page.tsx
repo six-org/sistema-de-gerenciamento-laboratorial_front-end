@@ -5,15 +5,13 @@ import { Input } from "@/components/ui/input"
 import Link from 'next/link'
 
 
-import { FcGoogle } from "react-icons/fc";
+
 
 
 /* Importações de URL de imagens */
 import imgBasicLab from "../../public/img/login/basic-lab.webp";
-import { signIn } from "next-auth/react";
 
-import Component from "../../components/teste";
-
+import {SignIn__google, SignIn__github} from "../../components/sign-in";
 
 const home = () => {
   return (
@@ -34,7 +32,7 @@ const home = () => {
               Insira seus dados para realizar seu Login
             </p>
 
-
+            {/* Login Principal */}
             <form className="mt-[3rem]">
               <div className="flex flex-col gap-[1rem]">
                 <Input className="h-[3rem] focus:outline-primary-pure focus-visible:outline-primary-pure focus-visible:text-primary-pure" type="email" placeholder="Digite seu e-mail" />
@@ -43,9 +41,14 @@ const home = () => {
                 <Link className="transition duration-[.3s] linear text-neutral-pure text-[1rem] hover:text-primary-pure focus-visible:text-primary-pure" href="#">Esqueceu a <strong>senha</strong>?</Link>
               </div>
 
+              <button type="submit" className="h-[3rem] bg-primary-pure w-full text-white p-[.3rem] rounded-[.4rem] mt-[2rem]">
+                Entrar
+              </button>
 
-              {/* Login alternativos */}
-              <div className="w-full flex flex-col gap-[1rem] items-center mt-[2rem]">
+            </form>
+
+            {/* Login alternativos */}
+            <div className="w-full flex flex-col gap-[1rem] items-center mt-[2rem]">
                 <p className="text-[1rem] text-neutral-light">
                   Continuar com...
                 </p>
@@ -53,20 +56,16 @@ const home = () => {
                 {/* Lista de logins alternativos */}
                 <ul className="w-full flex flex-wrap items-center justify-between">
                   <li>
-                    {/*<button onClick={()=>{signIn('google')}} className="overflow rounded-[.2rem] p-[.5rem] transition duration-[.3s] linear bg-neutral-light/5 hover:bg-neutral-light/10 focus-visible:bg-neutral-light/10 w-[8rem] inline-flex justify-center">
-                      <FcGoogle className="text-[2.5rem]" />
-  </button>*/}
+                    <SignIn__google />
+                  </li>
 
-                    <Component />
+                  <li>
+                    <SignIn__github />
                   </li>
                 </ul>
-              </div>
+            </div>
 
-              <button type="submit" className="h-[3rem] bg-primary-pure w-full text-white p-[.3rem] rounded-[.4rem] mt-[2rem]">
-                Entrar
-              </button>
-
-            </form>
+              
 
           </div>
 

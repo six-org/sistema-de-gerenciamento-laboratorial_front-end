@@ -19,11 +19,11 @@ export default function RootLayout({
     
     <html lang="pt-br">
       <SessionWrapper>
-      <body className={inter.className}>
-          <main className="min-h-screen h-screen w-screen">
-                {children}
-          </main>
-      </body>
+        <body className={inter.className}>
+            <main className="min-h-screen h-screen w-screen">
+                  {children}
+            </main>
+        </body>
       </SessionWrapper>
     </html>
   )
