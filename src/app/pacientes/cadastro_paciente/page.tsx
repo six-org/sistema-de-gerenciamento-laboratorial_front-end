@@ -34,7 +34,7 @@ const cadastro_paciente = () => {
               <BreadcrumbItem>
                 <BreadcrumbLink
                   href="/pacientes"
-                  className="font-medium text-2xl flex gap-[0.625rem] items-center"
+                  className="font-medium text-2xl flex gap-[0.625rem] items-center text-[#4870FF]"
                 >
                   <FiFileText />
                   Pacientes
@@ -56,33 +56,33 @@ const cadastro_paciente = () => {
               <p className="font-medium text-xl">Dados Pessoais</p>
               <div className="flex gap-[26px]">
                 <div className="grid">
-                  <p className="font-normal	text-base">Nome*</p>
+                  <label className="font-normal	text-base flex">Nome<p className="text-[#FF0000]">*</p></label>
                   <Input
-                    className="h-[3rem] focus:outline-primary-pure focus-visible:outline-primary-pure focus-visible:text-primary-pure"
+                    className="h-[3rem] focus:outline-primary-pure focus-visible:outline-primary-pure focus-visible:text-primary-pure border-[#D0D5DD]"
                     type="text"
                     placeholder="Digite seu nome completo..."
                   />
                 </div>
                 <div className="grid">
-                  <p className="font-normal	text-base">CPF*</p>
+                <label className="font-normal	text-base flex">CPF<p className="text-[#FF0000]">*</p></label>
                   <Input
-                    className="h-[3rem] focus:outline-primary-pure focus-visible:outline-primary-pure focus-visible:text-primary-pure"
+                    className="h-[3rem] focus:outline-primary-pure focus-visible:outline-primary-pure focus-visible:text-primary-pure border-[#D0D5DD]"
                     type="text"
                     placeholder="123.456.789-10"
                   />
                 </div>
                 <div className="grid">
-                  <p className="font-normal	text-base">RG*</p>
+                <label className="font-normal	text-base flex">RG<p className="text-[#FF0000]">*</p></label>
                   <Input
-                    className="h-[3rem] focus:outline-primary-pure focus-visible:outline-primary-pure focus-visible:text-primary-pure"
+                    className="h-[3rem] focus:outline-primary-pure focus-visible:outline-primary-pure focus-visible:text-primary-pure border-[#D0D5DD]"
                     type="text"
                     placeholder="12.345.678-9"
                   />
                 </div>
                 <div className="grid">
-                  <p className="font-normal	text-base">Data de Nascimento*</p>
+                <label className="font-normal	text-base flex">Data de Nascimento<p className="text-[#FF0000]">*</p></label>
                   <Input
-                    className="h-[3rem] focus:outline-primary-pure focus-visible:outline-primary-pure focus-visible:text-primary-pure"
+                    className="h-[3rem] focus:outline-primary-pure focus-visible:outline-primary-pure focus-visible:text-primary-pure border-[#D0D5DD]"
                     type="text"
                     placeholder="03/12/2004"
                   />
@@ -90,17 +90,17 @@ const cadastro_paciente = () => {
               </div>
               <div className="flex gap-[26px]">
                 <div className="grid">
-                  <p className="font-normal	text-base">Idade*</p>
+                <label className="font-normal	text-base flex">Idade<p className="text-[#FF0000]">*</p></label>
                   <Input
-                    className="h-[3rem] focus:outline-primary-pure focus-visible:outline-primary-pure focus-visible:text-primary-pure"
+                    className="h-[3rem] focus:outline-primary-pure focus-visible:outline-primary-pure focus-visible:text-primary-pure border-[#D0D5DD]"
                     type="text"
                     placeholder="24"
                   />
                 </div>
                 <div className="grid">
-                  <p className="font-normal	text-base">Sexo*</p>
+                <label className="font-normal	text-base flex">Sexo<p className="text-[#FF0000]">*</p></label>
                   <Select>
-                    <SelectTrigger className="w-[180px] h-[48px]">
+                    <SelectTrigger className="w-[180px] h-[48px] border-[#D0D5DD]">
                       <SelectValue placeholder="Selecione o sexo..." />
                     </SelectTrigger>
                     <SelectContent className="color-white">
@@ -116,33 +116,33 @@ const cadastro_paciente = () => {
               <p className="font-medium text-xl">Endereço</p>
               <div className="flex gap-[24px]">
                 <div>
-                  <p className="font-normal	text-base">CEP*</p>
+                <label className="font-normal	text-base flex">CEP<p className="text-[#FF0000]">*</p></label>
                   <Input
-                    className="h-[3rem] focus:outline-primary-pure focus-visible:outline-primary-pure focus-visible:text-primary-pure"
+                    className="h-[3rem] focus:outline-primary-pure focus-visible:outline-primary-pure focus-visible:text-primary-pure border-[#D0D5DD]"
                     type="text"
                     placeholder="59990-000"
                   />
                 </div>
                 <div>
-                  <p className="font-normal	text-base">Cidade*</p>
+                <label className="font-normal	text-base flex">Cidade<p className="text-[#FF0000]">*</p></label>
                   <Input
-                    className="h-[3rem] focus:outline-primary-pure focus-visible:outline-primary-pure focus-visible:text-primary-pure"
+                    className="h-[3rem] focus:outline-primary-pure focus-visible:outline-primary-pure focus-visible:text-primary-pure border-[#D0D5DD]"
                     type="email"
                     placeholder="Beltranópolis"
                   />
                 </div>
                 <div>
-                  <p className="font-normal	text-base">Endereço*</p>
+                <label className="font-normal	text-base flex">Endereço<p className="text-[#FF0000]">*</p></label>
                   <Input
-                    className="h-[3rem] focus:outline-primary-pure focus-visible:outline-primary-pure focus-visible:text-primary-pure"
+                    className="h-[3rem] focus:outline-primary-pure focus-visible:outline-primary-pure focus-visible:text-primary-pure border-[#D0D5DD]"
                     type="email"
                     placeholder="Rua fulano de ciclano"
                   />
                 </div>
                 <div>
-                  <p className="font-normal	text-base">Número*</p>
+                <label className="font-normal	text-base flex">Número<p className="text-[#FF0000]">*</p></label>
                   <Input
-                    className="h-[3rem] focus:outline-primary-pure focus-visible:outline-primary-pure focus-visible:text-primary-pure"
+                    className="h-[3rem] focus:outline-primary-pure focus-visible:outline-primary-pure focus-visible:text-primary-pure border-[#D0D5DD]"
                     type="email"
                     placeholder="15"
                   />
@@ -150,25 +150,25 @@ const cadastro_paciente = () => {
               </div>
               <div className="flex gap-[24px]">
                 <div>
-                  <p className="font-normal	text-base">Bairro*</p>
+                <label className="font-normal	text-base flex">Bairro<p className="text-[#FF0000]">*</p></label>
                   <Input
-                    className="h-[3rem] focus:outline-primary-pure focus-visible:outline-primary-pure focus-visible:text-primary-pure"
+                    className="h-[3rem] focus:outline-primary-pure focus-visible:outline-primary-pure focus-visible:text-primary-pure border-[#D0D5DD]"
                     type="email"
                     placeholder="Centro"
                   />
                 </div>
                 <div>
-                  <p className="font-normal	text-base">Complemento*</p>
+                <label className="font-normal	text-base flex">Complemento<p className="text-[#FF0000]">*</p></label>
                   <Input
-                    className="h-[3rem] focus:outline-primary-pure focus-visible:outline-primary-pure focus-visible:text-primary-pure"
+                    className="h-[3rem] focus:outline-primary-pure focus-visible:outline-primary-pure focus-visible:text-primary-pure border-[#D0D5DD]"
                     type="email"
                     placeholder="Local de referência"
                   />
                 </div>
                 <div>
-                  <p className="font-normal	text-base">UF*</p>
+                <label className="font-normal	text-base flex">UF<p className="text-[#FF0000]">*</p></label>
                   <Select>
-                    <SelectTrigger className="w-[180px] h-[48px]">
+                    <SelectTrigger className="w-[180px] h-[48px] border-[#D0D5DD]">
                       <SelectValue placeholder="Selecione o Estado" />
                     </SelectTrigger>
                     <SelectContent className="color-white">
@@ -184,17 +184,17 @@ const cadastro_paciente = () => {
               <p className="font-medium text-xl">Contato</p>
               <div className="flex gap-[24px]">
                 <div>
-                  <p className="font-normal	text-base">Telefone*</p>
+                <label className="font-normal	text-base flex">Telefone<p className="text-[#FF0000]">*</p></label>
                   <Input
-                    className="h-[3rem] focus:outline-primary-pure focus-visible:outline-primary-pure focus-visible:text-primary-pure"
+                    className="h-[3rem] focus:outline-primary-pure focus-visible:outline-primary-pure focus-visible:text-primary-pure border-[#D0D5DD]"
                     type="text"
                     placeholder="(11) 91234-5678"
                   />
                 </div>
                 <div>
-                  <p className="font-normal	text-base">E-mail*</p>
+                <label className="font-normal	text-base flex">E-mail<p className="text-[#FF0000]">*</p></label>
                   <Input
-                    className="h-[3rem] focus:outline-primary-pure focus-visible:outline-primary-pure focus-visible:text-primary-pure"
+                    className="h-[3rem] focus:outline-primary-pure focus-visible:outline-primary-pure focus-visible:text-primary-pure border-[#D0D5DD]"
                     type="email"
                     placeholder="joao.silva@email.com"
                   />
@@ -205,9 +205,9 @@ const cadastro_paciente = () => {
               <p className="font-medium text-xl">Dados Médicos</p>
               <div className="flex gap-[24px]">
                 <div>
-                  <p className="font-normal	text-base">Tipo Sanguíneo*</p>
+                <label className="font-normal	text-base flex">Tipo Sanguíneo<p className="text-[#FF0000]">*</p></label>
                   <Select>
-                    <SelectTrigger className="w-[180px] h-[48px]">
+                    <SelectTrigger className="w-[180px] h-[48px] border-[#D0D5DD]">
                       <SelectValue placeholder="Selecione o tipo sanguíneo" />
                     </SelectTrigger>
                     <SelectContent className="color-white">
@@ -223,25 +223,25 @@ const cadastro_paciente = () => {
                   </Select>
                 </div>
                 <div>
-                  <p className="font-normal	text-base">Peso*</p>
+                <label className="font-normal	text-base flex">Peso<p className="text-[#FF0000]">*</p></label>
                   <Input
-                    className="h-[3rem] focus:outline-primary-pure focus-visible:outline-primary-pure focus-visible:text-primary-pure"
+                    className="h-[3rem] focus:outline-primary-pure focus-visible:outline-primary-pure focus-visible:text-primary-pure border-[#D0D5DD]"
                     type="text"
                     placeholder="96Kg"
                   />
                 </div>
                 <div>
-                  <p className="font-normal	text-base">Altura*</p>
+                <label className="font-normal	text-base flex">Altura<p className="text-[#FF0000]">*</p></label>
                   <Input
-                    className="h-[3rem] focus:outline-primary-pure focus-visible:outline-primary-pure focus-visible:text-primary-pure"
+                    className="h-[3rem] focus:outline-primary-pure focus-visible:outline-primary-pure focus-visible:text-primary-pure border-[#D0D5DD]"
                     type="text"
                     placeholder="1,76"
                   />
                 </div>
                 <div>
-                  <p className="font-normal	text-base">Alergias*</p>
+                <label className="font-normal	text-base flex">Alergias<p className="text-[#FF0000]">*</p></label>
                   <Input
-                    className="h-[3rem] focus:outline-primary-pure focus-visible:outline-primary-pure focus-visible:text-primary-pure"
+                    className="h-[3rem] focus:outline-primary-pure focus-visible:outline-primary-pure focus-visible:text-primary-pure border-[#D0D5DD]"
                     type="text"
                     placeholder="Digite sua alergia..."
                   />
@@ -249,29 +249,29 @@ const cadastro_paciente = () => {
               </div>
               <div className="flex gap-[24px]">
                 <div>
-                  <p className="font-normal	text-base">Doenças Preexistentes*</p>
+                <label className="font-normal	text-base flex">Doenças Preexistentes<p className="text-[#FF0000]">*</p></label>
                   <Input
-                    className="h-[3rem] focus:outline-primary-pure focus-visible:outline-primary-pure focus-visible:text-primary-pure"
+                    className="h-[3rem] focus:outline-primary-pure focus-visible:outline-primary-pure focus-visible:text-primary-pure border-[#D0D5DD]"
                     type="text"
                     placeholder="Digite sua doença..."
                   />
                 </div>
                 <div>
-                  <p className="font-normal	text-base">Medicamentos em uso*</p>
+                <label className="font-normal	text-base flex">Medicamentos em Uso<p className="text-[#FF0000]">*</p></label>
                   <Input
-                    className="h-[3rem] focus:outline-primary-pure focus-visible:outline-primary-pure focus-visible:text-primary-pure"
+                    className="h-[3rem] focus:outline-primary-pure focus-visible:outline-primary-pure focus-visible:text-primary-pure  border-[#D0D5DD]"
                     type="text"
                     placeholder="Digite seus medicamentos"
                   />
                 </div>
               </div>
+              <div className="flex gap-[24px] justify-center">
+                <Button className="border-2 border-sky-500 border-[#D0D5DD]">Descartar</Button>
+                <Button className="border-2 border-sky-500 text-white bg-[#4870FF]">
+                  Adicionar
+                </Button>
+              </div>
             </div>
-          </div>
-          <div className="flex gap-[24px] justify-end ">
-            <Button className="border-2 border-sky-500">Descartar</Button>
-            <Button className="border-2 border-sky-500 text-white bg-[#4870FF]">
-              Adicionar
-            </Button>
           </div>
         </div>
       </div>
