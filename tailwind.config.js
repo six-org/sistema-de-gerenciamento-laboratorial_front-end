@@ -23,7 +23,8 @@ module.exports = {
       'neutral-pure': '#344051',
 
       /* Cores Erro */
-      'erro-pure': '#DC2626',
+      'error': '#DC2626',
+      'success': '#059669',
 
       /** Cores White e Black */
       'white': '#ffffff',
