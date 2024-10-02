@@ -22,6 +22,10 @@ module.exports = {
       'neutral-dark': '#09090B',
       'neutral-pure': '#344051',
 
+      /** Cores com outra nomeclatura */
+      'grey-700': '#48505E',
+      'grey-400': '#858D9D',
+
       /* Cores Erro */
       'error': '#DC2626',
       'success': '#059669',
@@ -29,6 +33,7 @@ module.exports = {
       /** Cores White e Black */
       'white': '#ffffff',
       'black': '#000000',
+
     },
     extend: {},
   },
