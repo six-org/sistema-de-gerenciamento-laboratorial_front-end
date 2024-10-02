@@ -54,7 +54,7 @@ const home = () => {
                 </p>
 
                 {/* Lista de logins alternativos */}
-                <ul className="w-full flex flex-wrap items-center justify-between">
+                <ul className="w-full flex flex-wrap items-center justify-center gap-[1.5rem]">
                   <li>
                     <SignIn__google />
                   </li>

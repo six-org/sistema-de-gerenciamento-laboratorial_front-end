@@ -1,7 +1,8 @@
 
 import { ReactNode } from "react";
 
-
+/* Fonte */
+import { Nunito_Sans } from "next/font/google";
 
 type card_result = {
     titulo: string,
@@ -11,7 +12,10 @@ type card_result = {
     color: string,
 }
 
+const nunitoSans = Nunito_Sans({subsets:["latin"]});
+
 const Card_Resultado = (props:card_result) => {
+    
     return (
         <>
             <div className="border-[1px] border-solid border-[#E7E7E7] p-[1rem] rounded-[.5rem] w-full">
@@ -20,12 +24,12 @@ const Card_Resultado = (props:card_result) => {
                         {props.icone}
                     </div>
                 </div>
-                <h4 className="mt-[.25rem] text-[#637083] text-[.875rem] font-bold">
+                <h4 className={`mt-[.25rem] text-[#637083] text-[.875rem] font-bold ${nunitoSans.className}`}>
                     {props.titulo}
                 </h4>
 
                 <div className="mt-[.25rem] flex items-center justify-between">
-                    <p className="text-[#141C25] text-[1.5rem] font-bold">
+                    <p className={`text-[#141C25] text-[1.5rem] font-bold ${nunitoSans.className}`}>
                         {props.numero}
                     </p>
 

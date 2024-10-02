@@ -15,7 +15,7 @@ module.exports = {
     colors: {
       
       /* Cores Primárias */
-      'primary-pure': '#10B978',
+      'primary-pure': '#4870FF',
 
       /* Cores Neutrais */
       'neutral-light': '#637083', 
