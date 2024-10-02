@@ -1,6 +1,9 @@
 
 import NavegacaoUser from "../../../components/navegacaoUser";
 
+/* Fonte */
+import { Nunito_Sans } from "next/font/google";
+
 
 
 /* Icones */
@@ -27,7 +30,9 @@ import Card_Notificacao from "./components/Card/Card_Notificacao";
 import { Card_1 } from "../../../components/cards";
 
 
+
 const laboratorio = () => {
+
 
     return (
         <>
@@ -62,8 +67,8 @@ const laboratorio = () => {
                         <Card_Resultado color={'#FF56563D'} titulo={'Recoletas'} numero={18} porcentagem={18} icone={<CgDanger className="h-full w-full text-[#FF5656]" />} />
                     
                     </div>
-                    <p className="text-[.875rem] font-normal mt-[.5rem]">
-                        Dados atualizados há <span className="font-medium">45 segundos</span>.
+                    <p className="text-[.875rem] font-normal mt-[.5rem] text-[#344051] ml-[1.5rem]">
+                        Dados atualizados há <span className="font-medium text-black">45 segundos</span>.
                     </p>
 
                     <div className="py-[1.5rem] grid grid-cols-3 gap-[.625rem]">
@@ -76,9 +81,19 @@ const laboratorio = () => {
                 </div>
 
                 {/** Conteúdo de avisos e notificações */}
-                <div className="p-[3.625rem_0.625rem]">
+                <div className="p-[3.625rem_0.625rem] flex flex-col gap-[.625rem]">
                     <Card_1 titulo={'Avisos'} texto={'Avisos do Sistema'}>
-                        <Card_Notificacao status={false} titulo={'Atualização DB'} />
+                        <div className="flex flex-col gap-[.5rem] h-[18rem] overflow-y-auto">
+                            <Card_Notificacao status={false} titulo={'Atualização DB'} />
+                            <Card_Notificacao status={true} titulo={'Atualização DB'} />
+                        </div>
+                    </Card_1>
+
+                    <Card_1 titulo={'Notificações'} texto={'Informações sobre Amostras'}>
+                        <div className="flex flex-col gap-[.5rem] h-[18rem] overflow-y-auto">
+                            <Card_Notificacao status={false} titulo={'Amostra'} id={'A584'} />
+                            <Card_Notificacao status={true} titulo={'Amostra'} id={'A589'} />
+                        </div>
                     </Card_1>
                 </div>
             </div>
