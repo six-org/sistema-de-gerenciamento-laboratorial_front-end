@@ -15,7 +15,7 @@ module.exports = {
     colors: {
       
       /* Cores Primárias */
-      'primary-pure': '#10B978',
+      'primary-pure': '#4870FF',
 
       /* Cores Neutrais */
       'neutral-light': '#637083', 
@@ -23,7 +23,8 @@ module.exports = {
       'neutral-pure': '#344051',
 
       /* Cores Erro */
-      'erro-pure': '#DC2626',
+      'error': '#DC2626',
+      'success': '#059669',
 
       /** Cores White e Black */
       'white': '#ffffff',
