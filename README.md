@@ -5,6 +5,7 @@
 ![licensa](https://img.shields.io/badge/license-MIT-green)
 ![versão npm](https://img.shields.io/badge/npm-v10.2.4-blue)
 ![versão next](https://img.shields.io/badge/next-v14.2.7-blue)
+![versão nextauth](https://img.shields.io/badge/nextauth-v5.0.0-beta-blue)
 ![versão tailwind](https://img.shields.io/badge/tailwindcss-v^3.4.10-blue)
 ![versão eslint](https://img.shields.io/badge/eslints-v^8-blue)
 ![types](https://img.shields.io/badge/types-TypeScript-blue)
