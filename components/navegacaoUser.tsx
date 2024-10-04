@@ -51,11 +51,11 @@ const NavegacaoUser = () => {
                         <AvatarFallback>{data?.user?.name}</AvatarFallback>
                     </Avatar>
 
-                    <div>
-                        <p className="text-[.875rem] text-black leading-[1]">
+                    <div className="overflow-hidden w-full">
+                        <p className="text-[.875rem] text-black leading-[1] truncate">
                             {data?.user?.name}
                         </p>
-                        <p className="text-[0.75rem] leading-[1] text-[#364051]">
+                        <p className="text-[0.75rem] leading-[1] text-[#364051] truncate">
                             {data?.user?.email}
                         </p>
                     </div>
