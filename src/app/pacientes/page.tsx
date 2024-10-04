@@ -26,7 +26,7 @@ function getStatusClass(status: string) {
         case 'Pendência':
             return 'bg-[#F6C27229] w-[90px] h-[24px] p-[0.5rem] pr-[0.8rem] pl-[0.8rem] rounded-[8px] text-[12px] text-[#F6C272] font-medium';
         case 'Processando':
-            return 'bg-[#4870FF29] w-[90px] h-[24px] p-[0.5rem] rounded-[8px] text-[12px] text-[#4870FF] font-medium';
+            return 'bg-[#4870FF29] w-[90px] h-[24px] p-[0.5rem] rounded-[8px] text-[12px] text-primary-pure font-medium';
         default:
             return '';
     }
@@ -42,7 +42,7 @@ const paciente = () => {
                 <NavegacaoUser />
             </div>
             <div className="mt-4 w-full px-16 pt[20px]">
-                <div className="flex items-center text-[#4870FF] text-[24px] pt-[74px] pl-[10px] pb-[74px]">
+                <div className="flex items-center text-primary-pure text-[24px] pt-[74px] pl-[10px] pb-[74px]">
                     <FaRegFileAlt />
                     <p className="px-2 py-2.5">Pacientes</p>
                 </div>
@@ -60,7 +60,7 @@ const paciente = () => {
                             <MdOutlineSort />
                             <p>Filte</p>
                         </div>
-                        <div className="flex items-center bg-[#4870FF] w-[237px] h-[40px] text-white border border-[#E4E7EC] rounded-[8px] py-2 pr-3 pl-3">
+                        <div className="flex items-center bg-primary-pure w-[237px] h-[40px] text-white border border-[#E4E7EC] rounded-[8px] py-2 pr-3 pl-3">
                             <GoPlus />
                             <button className="ml-2 p-2 rounded-[8px] border-solid text-[15px]">Adicionar Manualmente</button>
                         </div>
@@ -93,11 +93,11 @@ const paciente = () => {
                                     </span>
                                 </td>
                                 <td className="p-2 pr-[20px] flex justify-end items-center gap-[1rem]">
-                                    <div className="flex items-center w-[12rem] h-[2.2rem] bg-[#4870FF] rounded rounded-[0.5rem] text-white p-[0.5rem]">
+                                    <div className="flex items-center w-[12rem] h-[2.2rem] bg-primary-pure rounded rounded-[0.5rem] text-white p-[0.5rem]">
                                         <GoChevronDown />
                                         <button className="bg-gray-200 p-1 rounded text-[0.8rem]">Expandir Visualização</button>
                                     </div>
-                                    <div className="flex justify-center items-center w-[2rem] h-[2rem] rounded border border-[#4870FF] text-[#4870FF] cursor-pointer">
+                                    <div className="flex justify-center items-center w-[2rem] h-[2rem] rounded border border-primary-pure text-primary-pure cursor-pointer">
                                         <GoDownload />
                                     </div>
                                 </td>
@@ -106,15 +106,15 @@ const paciente = () => {
                     </tbody>
                 </table>
 
-                <div className="flex justify-center items-center m-[100px] gap-[0.5rem] text-[#4870FF]">
-                    <div className="flex justify-center items-center w-[2rem] h-[2rem] text-[1.0rem] border border-[#4870FF] rounded rounded-[0.3rem]">
+                <div className="flex justify-center items-center m-[100px] gap-[0.5rem] text-primary-pure">
+                    <div className="flex justify-center items-center w-[2rem] h-[2rem] text-[1.0rem] border border-primary-pure rounded rounded-[0.3rem]">
                         <GoChevronLeft />
                     </div>
-                    <button className="w-[2rem] h-[2rem] text-[1.0rem] border border-[#4870FF] rounded rounded-[0.3rem]">1</button>
-                    <button className="w-[2rem] h-[2rem] text-[1.0rem] border border-[#4870FF] rounded rounded-[0.3rem]">2</button>
-                    <button className="w-[2rem] h-[2rem] text-[1.0rem] border border-[#4870FF] rounded rounded-[0.3rem]">3</button>
-                    <button className="w-[2rem] h-[2rem] text-[1.0rem] border border-[#4870FF] rounded rounded-[0.3rem]">4</button>
-                    <div className="flex justify-center items-center w-[2rem] h-[2rem] text-[1.0rem] border border-[#4870FF] rounded rounded-[0.3rem]">
+                    <button className="w-[2rem] h-[2rem] text-[1.0rem] border border-primary-pure rounded rounded-[0.3rem]">1</button>
+                    <button className="w-[2rem] h-[2rem] text-[1.0rem] border border-primary-pure rounded rounded-[0.3rem]">2</button>
+                    <button className="w-[2rem] h-[2rem] text-[1.0rem] border border-primary-pure rounded rounded-[0.3rem]">3</button>
+                    <button className="w-[2rem] h-[2rem] text-[1.0rem] border border-primary-pure rounded rounded-[0.3rem]">4</button>
+                    <div className="flex justify-center items-center w-[2rem] h-[2rem] text-[1.0rem] border border-primary-pure rounded rounded-[0.3rem]">
                         <GoChevronRight />
                     </div>
                 </div>
