@@ -6,7 +6,7 @@ import { GoChevronDown } from "react-icons/go";
 import { GoDownload } from "react-icons/go";
 import { GoChevronLeft, GoChevronRight } from "react-icons/go";
 
-import NavegacaoUser from "../ui/nav/navegacaoUser";
+import NavegacaoUser from "../../../components/navegacaoUser";
 
 const patients = [
     { id: 45, name: 'Andrey de Oliveira S...', numero: 84856, status: 'Concluído' },
