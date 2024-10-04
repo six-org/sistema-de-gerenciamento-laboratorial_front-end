@@ -22,11 +22,11 @@ const patients = [
 function getStatusClass(status: string) {
     switch (status) {
         case 'Concluído':
-            return 'bg-[#10B97821] w-[90px] h-[24px] p-[0.5rem] pr-[0.9rem] pl-[0.9rem] rounded-[8px] text-[12px] text-[#10B978] font-medium';
+            return 'bg-[#10B97821] w-[90rem] h-[24rem] p-[0.5rem] pr-[0.9rem] pl-[0.9rem] rounded-[8px] text-[0.8rem] text-[#10B978] font-medium';
         case 'Pendência':
-            return 'bg-[#F6C27229] w-[90px] h-[24px] p-[0.5rem] pr-[0.8rem] pl-[0.8rem] rounded-[8px] text-[12px] text-[#F6C272] font-medium';
+            return 'bg-[#F6C27229] w-[90rem] h-[24rem] p-[0.5rem] pr-[0.8rem] pl-[0.8rem] rounded-[8px] text-[0.8rem] text-[#F6C272] font-medium';
         case 'Processando':
-            return 'bg-[#4870FF29] w-[90px] h-[24px] p-[0.5rem] rounded-[8px] text-[12px] text-primary-pure font-medium';
+            return 'bg-[#4870FF29] w-[90rem] h-[24rem] p-[0.5rem] rounded-[8px] text-[0.8rem] text-primary-pure font-medium';
         default:
             return '';
     }
@@ -41,8 +41,8 @@ const paciente = () => {
                 {/** Navegação do usuário */}
                 <NavegacaoUser />
             </div>
-            <div className="mt-4 w-full px-16 pt[20px]">
-                <div className="flex items-center text-primary-pure text-[24px] pt-[74px] pl-[10px] pb-[74px]">
+            <div className="mt-4 w-full px-16 pt[20rem]">
+                <div className="flex items-center text-primary-pure text-[1.5rem] pt-[4rem] pl-[0.7rem] pb-[4rem]">
                     <FaRegFileAlt />
                     <p className="px-2 py-2.5">Pacientes</p>
                 </div>
@@ -62,14 +62,14 @@ const paciente = () => {
                         </div>
                         <div className="flex items-center bg-primary-pure w-[237px] h-[40px] text-white border border-[#E4E7EC] rounded-[8px] py-2 pr-3 pl-3">
                             <GoPlus />
-                            <button className="ml-2 p-2 rounded-[8px] border-solid text-[15px]">Adicionar Manualmente</button>
+                            <button className="ml-2 p-2 rounded-[8px] border-solid text-[0.8rem]">Adicionar Manualmente</button>
                         </div>
                     </div>
                 </div>
                 <table className="w-full mt-[50px] bg-[#F9FAFB] text-center">
                     <thead>
                         <tr>
-                            <th className=" flex items-center text-[#667085] justify-center gap-[5px] p-2">
+                            <th className=" flex items-center text-[#667085] justify-center gap-[2rem] p-2">
                                 <div className=" w-[20px] h-[20px] border-2 border-[#CED2DA] rounded-[8px]"></div>
                                 <p>Amostra</p>
                             </th>
@@ -82,17 +82,17 @@ const paciente = () => {
                     <tbody>
                         {patients.map((patient) => (
                             <tr className="bg-[#FFFFFF]" key={patient.id}>
-                                <td className="flex flex-row-reverse justify-end gap-[5px]">{patient.id}
-                                    <div className=" w-[20px] h-[20px] border-2 border-[#CED2DA] rounded-[8px] ml-[1.8rem]"></div>
+                                <td className="flex flex-row-reverse justify-end gap-[2rem]">{patient.id}
+                                    <div className=" w-[1.2rem] h-[1.2rem] border-2 border-[#CED2DA] rounded-[8px] ml-[1.6rem]"></div>
                                 </td>
-                                <td className="p-2">{patient.name}</td>
+                                <td className="p-2 text-ellipsis overflow-hidden whitespace-nowrap">{patient.name}</td>
                                 <td className="p-2">{patient.numero}</td>
                                 <td className="p-2">
                                     <span className={`p-1 rounded ${getStatusClass(patient.status)}`}>
                                         {patient.status}
                                     </span>
                                 </td>
-                                <td className="p-2 pr-[20px] flex justify-end items-center gap-[1rem]">
+                                <td className="p-2 pr-[2rem] flex justify-end items-center gap-[1rem]">
                                     <div className="flex items-center w-[12rem] h-[2.2rem] bg-primary-pure rounded rounded-[0.5rem] text-white p-[0.5rem]">
                                         <GoChevronDown />
                                         <button className="bg-gray-200 p-1 rounded text-[0.8rem]">Expandir Visualização</button>
