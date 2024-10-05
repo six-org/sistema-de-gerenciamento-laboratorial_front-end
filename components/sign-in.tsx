@@ -9,7 +9,7 @@ import { signIn } from "next-auth/react";
 export function SignIn__google() {
     return (
 
-        <button onClick={() => signIn('github', { redirectTo: "/laboratorio" })} className="overflow rounded-[.2rem] p-[.5rem] transition duration-[.3s] linear bg-neutral-light/5 hover:bg-neutral-light/10 focus-visible:bg-neutral-light/10 w-[8rem] inline-flex justify-center">
+        <button onClick={() => signIn('google', { redirectTo: "/laboratorio" })} className="overflow rounded-[.2rem] p-[.5rem] transition duration-[.3s] linear bg-neutral-light/5 hover:bg-neutral-light/10 focus-visible:bg-neutral-light/10 w-[8rem] inline-flex justify-center">
             <FcGoogle className="text-[2.5rem]" />
         </button>
     )

@@ -8,6 +8,18 @@ import { GoChevronLeft, GoChevronRight } from "react-icons/go";
 
 import NavegacaoUser from "../../../components/navegacaoUser";
 
+import {
+    Breadcrumb,
+    BreadcrumbItem,
+    BreadcrumbLink,
+    BreadcrumbList,
+    BreadcrumbPage,
+    BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
+
+import Link from "next/link";
+import { FiFileText } from "react-icons/fi";
+
 const patients = [
     { id: 45, name: 'Andrey de Oliveira S...', numero: 84856, status: 'Concluído' },
     { id: 46, name: 'Andrey de Oliveira S...', numero: 84856, status: 'Pendência' },
@@ -41,12 +53,22 @@ const paciente = () => {
                 {/** Navegação do usuário */}
                 <NavegacaoUser />
             </div>
-            <div className="mt-4 w-full px-16 pt[20px]">
-                <div className="flex items-center text-primary-pure text-[24px] pt-[74px] pl-[10px] pb-[74px]">
-                    <FaRegFileAlt />
-                    <p className="px-2 py-2.5">Pacientes</p>
-                </div>
-                <div className="flex justify-between mb-2">
+            <div className="px-[40px] py-[60px] w-full">
+                <Breadcrumb>
+                    <BreadcrumbList>
+                        <BreadcrumbItem>
+                            <Link
+                                href="/pacientes"
+                                className="font-medium text-[1.5rem] flex gap-[0.625rem] items-center text-primary-pure"
+                            >
+                                <FiFileText />
+                                Pacientes
+                            </Link>
+                        </BreadcrumbItem>
+                    </BreadcrumbList>
+                </Breadcrumb>
+
+                <div className="flex justify-between mb-2 mt-[2.875rem]">
                     <div className="flex px-2 pr-2.5 pl-3 items-center border border-[#E4E7EC] rounded-[8px]">
                         <CiSearch />
                         <input
@@ -62,7 +84,9 @@ const paciente = () => {
                         </div>
                         <div className="flex items-center bg-primary-pure w-[237px] h-[40px] text-white border border-[#E4E7EC] rounded-[8px] py-2 pr-3 pl-3">
                             <GoPlus />
-                            <button className="ml-2 p-2 rounded-[8px] border-solid text-[15px]">Adicionar Manualmente</button>
+                            <Link href='/pacientes/cadastro_paciente'>
+                                <button className="ml-2 p-2 rounded-[8px] border-solid text-[15px]">Adicionar Manualmente</button>
+                            </Link>
                         </div>
                     </div>
                 </div>

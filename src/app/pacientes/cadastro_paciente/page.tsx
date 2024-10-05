@@ -24,6 +24,7 @@ import { FiFileText } from "react-icons/fi";
 
 /** Componentes */
 import { Select_Cadastro_Paciente_Primary } from "./components/select_cadastro_paciente";
+import Link from "next/link";
 
 const cadastro_paciente = () => {
   return (
@@ -36,13 +37,13 @@ const cadastro_paciente = () => {
           <Breadcrumb>
             <BreadcrumbList>
               <BreadcrumbItem>
-                <BreadcrumbLink
+                <Link
                   href="/pacientes"
                   className="font-medium text-[1.5rem] flex gap-[0.625rem] items-center text-primary-pure"
                 >
                   <FiFileText />
                   Pacientes
-                </BreadcrumbLink>
+                </Link>
               </BreadcrumbItem>
               <BreadcrumbSeparator className="text-primary-pure" />
               <BreadcrumbItem>
