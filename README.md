@@ -19,6 +19,7 @@
 <!--ts-->
    * [1. Instalação](#instalacao)
    * [2. Configuração do NextAuth](#nextauth)
+   * * [2.1. Configurando o NextAuth para login com o Google](#authgoogle)
 <!--te-->
 
 <h1 id='instalacao'>
@@ -62,7 +63,7 @@ bun dev
 
 ```bash
 
-NEXTAUTH_SECRET=[ADICIONE_A_CHEVE_SECRET_AQUI]
+NEXTAUTH_SECRET=ADICIONE_A_CHEVE_SECRET_AQUI
 
 ```
 
@@ -72,12 +73,12 @@ NEXTAUTH_SECRET=[ADICIONE_A_CHEVE_SECRET_AQUI]
 
 ```bash
 
-NEXTAUTH_URL=[URL_DO_SEU_SITE]
+NEXTAUTH_URL=URL_DO_SEU_SITE
 
 ```
 
-<h4>
-    2.1 Configurando o NextAuth para login com o Google
+<h4 id="authgoogle">
+    2.1. Configurando o NextAuth para login com o Google
 </h4>
 <p>
     Para iniciar a configuração do login com o Google, é preciso que você possua acesso ao site <a target="_blank" href="https://console.cloud.google.com">https://console.cloud.google.com</a> e criar uma API de Credenciais (seguindo o seguinte fluxo: botão hamburguer -> APIs e serviços -> Credenciais).
@@ -92,8 +93,25 @@ NEXTAUTH_URL=[URL_DO_SEU_SITE]
 ![Segundo passo para criar uma API de credenciamento no google](https://i.imgur.com/2sldbRu.png)
 
 <p>
-    Em seguida você será redirecionado para uma página onde terá um select para selecionar o tipo de aplicativo, onde nesta opção você marcará "App para computador" e em seguida você dará um nome a essa aplicação.
+    Em seguida você será redirecionado para uma página onde você perceberá um select para selecionar o tipo de aplicativo, onde nesta opção você marcará "App para computador" e em seguida você dará um nome a essa aplicação.
 </p>
 
 ![Terceiro passo para criar uma API de credenciamento no google](https://i.imgur.com/TxaprNv.png)
+
+<p>
+    PRONTO! Após clicar no botão "criar" mostrará uma página com um pop-up contendo as informações necessária para a configuração do login com o Google. São eles: ID do Cliente e Chave Secreta do Cliente.
+</p>
+
+![Quarto passo para criar uma API de credenciamento no google](https://i.imgur.com/5J9aE9l.png)
+
+<p>
+    Em seguinda a gente retornará pro arquivo .env e adicionará AUTH_GOOGLE_ID e AUTH_GOOGLE_SECRET.
+</p>
+
+```bash
+
+AUTH_GOOGLE_ID=ADICIONE_O_ID_DO_CLIENT_DO_GOOGLE_AQUI
+AUTH_GOOGLE_SECRET=ADICIONE_A_CHAVE_SECRETA_DO_GOOGLE_AQUI
+
+```
 
