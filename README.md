@@ -82,15 +82,18 @@ NEXTAUTH_URL=[URL_DO_SEU_SITE]
 <p>
     Para iniciar a configuração do login com o Google, é preciso que você possua acesso ao site <a target="_blank" href="https://console.cloud.google.com">https://console.cloud.google.com</a> e criar uma API de Credenciais (seguindo o seguinte fluxo: botão hamburguer -> APIs e serviços -> Credenciais).
 </p>
+
 ![Primeiro passo para criar uma API de credenciamento no google](https://i.imgur.com/xArwTtH.png)
 
 <p>
     Você será redirecionado a uma página onde mostrará todas as suas APIs de credenciamento, onde também é possível criar uma nova API apertando o botão "criar credenciais" e selecionando a opção "ID do cliente OAuth".
 </p>
+
 ![Segundo passo para criar uma API de credenciamento no google](https://i.imgur.com/2sldbRu.png)
 
 <p>
     Em seguida você será redirecionado para uma página onde terá um select para selecionar o tipo de aplicativo, onde nesta opção você marcará "App para computador" e em seguida você dará um nome a essa aplicação.
 </p>
+
 ![Terceiro passo para criar uma API de credenciamento no google](https://i.imgur.com/TxaprNv.png)
 
