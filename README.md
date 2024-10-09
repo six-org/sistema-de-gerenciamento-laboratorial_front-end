@@ -19,7 +19,7 @@
 <!--ts-->
    * [1. Instalação](#instalacao)
    * [2. Configuração do NextAuth](#nextauth)
-   * * [2.1. Configurando o NextAuth para login com o Google](#authgoogle)
+    * [2.1. Configurando o NextAuth para login com o Google](#authgoogle)
 <!--te-->
 
 <h1 id='instalacao'>
