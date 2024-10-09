@@ -75,3 +75,7 @@ NEXTAUTH_SECRET=[ADICIONE_A_CHEVE_SECRET_AQUI]
 NEXTAUTH_URL=[URL_DO_SEU_SITE]
 
 ```
+
+<h2>
+    Configurando o provider para login com o Google
+</h2>
