@@ -105,7 +105,7 @@ NEXTAUTH_URL=URL_DO_SEU_SITE
 ![Quarto passo para criar uma API de credenciamento no google](https://i.imgur.com/5J9aE9l.png)
 
 <p>
-    Em seguinda a gente retornará pro arquivo .env e adicionará AUTH_GOOGLE_ID e AUTH_GOOGLE_SECRET.
+    Em seguinda a retornaremos pro arquivo .env e iremos adicionar o AUTH_GOOGLE_ID e o AUTH_GOOGLE_SECRET.
 </p>
 
 ```bash
