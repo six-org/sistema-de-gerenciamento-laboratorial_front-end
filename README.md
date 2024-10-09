@@ -76,6 +76,6 @@ NEXTAUTH_URL=[URL_DO_SEU_SITE]
 
 ```
 
-<h2>
+<h4>
     Configurando o provider para login com o Google
-</h2>
+</h4>
