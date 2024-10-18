@@ -21,12 +21,89 @@ import {
 
 import { FiFileText } from "react-icons/fi";
 
+/** Dados Locais */
+import { Paciente, Endereco, Contato } from "@/app/components/dataLocal";
+
 
 /** Componentes */
 import { Select_Cadastro_Paciente_Primary } from "./components/select_cadastro_paciente";
 import Link from "next/link";
 
+
 const cadastro_paciente = () => {
+
+  /** Função para adicionar o paciente no localStorage */
+  const savePaciente = (dados:Paciente) =>{
+    localStorage.setItem('pacienteData', JSON.stringify(dados));
+  } 
+
+
+  const submitPaciente = (event:any) =>{
+    event.preventDefault();
+
+    const dados = new FormData(event.target);
+    
+    /** Dados Paciente */
+    const nome = dados.get('paciente-nome');
+    const cpf = dados.get('paciente-rg');
+    const rg = dados.get('paciente-rg');
+    const dataNascimento = dados.get('paciente-nascimento');
+    const idade = dados.get('paciente-idade');
+    const sexo = dados.get('paciente-sexo');
+
+    /** Dados Endereço */
+    const cep = dados.get('endereco-cep');
+    const cidade = dados.get('endereco-cidade');
+    const endereco = dados.get('endereco-endereco');
+    const numero = dados.get('endereco-numero');
+    const bairro = dados.get('endereco-bairro');
+    const complemento = dados.get('endereco-complemento');
+    const uf = dados.get('endereco-uf');
+
+    /** Dados Contato */
+    const telefone = dados.get('contato-telefone');
+    const email = dados.get('contato-email');
+
+
+
+
+    const novoPaciente:Paciente = {
+      nome: nome as string,
+      cpf: cpf as string,
+      rg: rg as string,
+      data_nascimento: dataNascimento as unknown as Date,
+      idade: idade as unknown as number,
+      sexo: sexo as string,
+    }
+
+    const novoEndereco:Endereco = {
+      cep: cep as string,
+      cidade: cidade as string,
+      endereco: endereco as string,
+      numero: numero as unknown as number,
+      bairro: bairro as string,
+      complemento: complemento as string,
+      uf: uf as string,
+      pessoa: novoPaciente as Paciente,
+    }
+
+    const novoContato:Contato ={
+      pessoa: novoPaciente as Paciente,
+      email: email as string,
+      telefone: telefone as string,
+    }
+
+    console.log(novoEndereco);
+
+    
+
+
+
+
+  }
+
+
+
   return (
     <>
       <div className="grid grid-cols-[17rem_1fr]">
@@ -57,7 +134,7 @@ const cadastro_paciente = () => {
           </Breadcrumb>
 
           
-          <div className="gap-[24px] mt-[2.75rem]">
+          <form onSubmit={submitPaciente} className="gap-[24px] mt-[2.75rem]">
 
             {/** Dados Pessoais */}
             <div className="gap-[24px]">
@@ -71,6 +148,7 @@ const cadastro_paciente = () => {
                     className="h-[3rem] w-full focus:outline-primary-pure focus-visible:outline-primary-pure focus-visible:text-primary-pure border-[#D0D5DD]"
                     type="text"
                     placeholder="Digite seu nome completo..."
+                    name="paciente-nome"
                   />
                 </div>
 
@@ -80,6 +158,7 @@ const cadastro_paciente = () => {
                     className="h-[3rem] w-full focus:outline-primary-pure focus-visible:outline-primary-pure focus-visible:text-primary-pure border-[#D0D5DD]"
                     type="text"
                     placeholder="123.456.789-10"
+                    name="paciente-cpf"
                   />
                 </div>
 
@@ -89,6 +168,7 @@ const cadastro_paciente = () => {
                     className="h-[3rem] w-full focus:outline-primary-pure focus-visible:outline-primary-pure focus-visible:text-primary-pure border-[#D0D5DD]"
                     type="text"
                     placeholder="12.345.678-9"
+                    name="paciente-rg"
                   />
                 </div>
 
@@ -98,6 +178,7 @@ const cadastro_paciente = () => {
                     className="h-[3rem] w-full focus:outline-primary-pure focus-visible:outline-primary-pure focus-visible:text-primary-pure border-[#D0D5DD]"
                     type="text"
                     placeholder="03/12/2004"
+                    name="paciente-nascimento"
                   />
                 </div>
 
@@ -107,12 +188,13 @@ const cadastro_paciente = () => {
                     className="h-[3rem] w-full focus:outline-primary-pure focus-visible:outline-primary-pure focus-visible:text-primary-pure border-[#D0D5DD]"
                     type="text"
                     placeholder="24"
+                    name="paciente-idade"
                   />
                 </div>
 
                 <div className="">
                 <label className="font-normal text-base text-grey-700 flex">Sexo<p className="text-[#FF0000]">*</p></label>
-                  <Select>
+                  <Select name="paciente-sexo">
                     <SelectTrigger className="w-full h-[48px] border-[#D0D5DD] text-grey-400">
                       <SelectValue placeholder="Selecione o sexo..." />
                     </SelectTrigger>
@@ -136,6 +218,7 @@ const cadastro_paciente = () => {
                     className="h-[3rem] focus:outline-primary-pure focus-visible:outline-primary-pure focus-visible:text-primary-pure border-[#D0D5DD]"
                     type="text"
                     placeholder="59990-000"
+                    name="endereco-cep"
                   />
                 </div>
 
@@ -143,8 +226,9 @@ const cadastro_paciente = () => {
                 <label className="font-normal text-base text-grey-700 flex">Cidade<p className="text-[#FF0000]">*</p></label>
                   <Input
                     className="h-[3rem] focus:outline-primary-pure focus-visible:outline-primary-pure focus-visible:text-primary-pure border-[#D0D5DD]"
-                    type="email"
+                    type="text"
                     placeholder="Beltranópolis"
+                    name="endereco-cidade"
                   />
                 </div>
 
@@ -152,8 +236,9 @@ const cadastro_paciente = () => {
                 <label className="font-normal text-base text-grey-700 flex">Endereço<p className="text-[#FF0000]">*</p></label>
                   <Input
                     className="h-[3rem] focus:outline-primary-pure focus-visible:outline-primary-pure focus-visible:text-primary-pure border-[#D0D5DD]"
-                    type="email"
+                    type="text"
                     placeholder="Rua fulano de ciclano"
+                    name="endereco-endereco"
                   />
                 </div>
 
@@ -161,8 +246,9 @@ const cadastro_paciente = () => {
                 <label className="font-normal text-base text-grey-700 flex">Número<p className="text-[#FF0000]">*</p></label>
                   <Input
                     className="h-[3rem] focus:outline-primary-pure focus-visible:outline-primary-pure focus-visible:text-primary-pure border-[#D0D5DD]"
-                    type="email"
+                    type="text"
                     placeholder="15"
+                    name="endereco-numero"
                   />
                 </div>
 
@@ -170,8 +256,9 @@ const cadastro_paciente = () => {
                 <label className="font-normal text-base text-grey-700 flex">Bairro<p className="text-[#FF0000]">*</p></label>
                   <Input
                     className="h-[3rem] focus:outline-primary-pure focus-visible:outline-primary-pure focus-visible:text-primary-pure border-[#D0D5DD]"
-                    type="email"
+                    type="text"
                     placeholder="Centro"
+                    name="endereco-bairro"
                   />
                 </div>
 
@@ -179,14 +266,15 @@ const cadastro_paciente = () => {
                 <label className="font-normal text-base text-grey-700 flex">Complemento<p className="text-[#FF0000]">*</p></label>
                   <Input
                     className="h-[3rem] focus:outline-primary-pure focus-visible:outline-primary-pure focus-visible:text-primary-pure border-[#D0D5DD]"
-                    type="email"
+                    type="text"
                     placeholder="Local de referência"
+                    name="endereco-complemento"
                   />
                 </div>
 
                 <div>
                 <label className="font-normal text-base text-grey-700 flex">UF<p className="text-[#FF0000]">*</p></label>
-                  <Select>
+                  <Select name="endereco-uf">
                     <SelectTrigger className="w-full h-[48px] border-[#D0D5DD] text-grey-400">
                       <SelectValue placeholder="Selecione o Estado" />
                     </SelectTrigger>
@@ -210,6 +298,7 @@ const cadastro_paciente = () => {
                     className="h-[3rem] focus:outline-primary-pure focus-visible:outline-primary-pure focus-visible:text-primary-pure border-[#D0D5DD]"
                     type="text"
                     placeholder="(11) 91234-5678"
+                    name="contato-telefone"
                   />
                 </div>
 
@@ -219,6 +308,7 @@ const cadastro_paciente = () => {
                     className="h-[3rem] focus:outline-primary-pure focus-visible:outline-primary-pure focus-visible:text-primary-pure border-[#D0D5DD]"
                     type="email"
                     placeholder="joao.silva@email.com"
+                    name="contato-email"
                   />
                 </div>
               </div>
@@ -299,12 +389,13 @@ const cadastro_paciente = () => {
                     Descartar
                 </Button>
 
-                <Button className="border-2 border-sky-500 text-white bg-primary-pure w-[6.875rem]">
+                <Button type="submit" className="border-2 border-sky-500 text-white bg-primary-pure w-[6.875rem]">
                   Adicionar
                 </Button>
               </div>
             </div>
-          </div>
+          </form>
+
         </div>
       </div>
     </>
