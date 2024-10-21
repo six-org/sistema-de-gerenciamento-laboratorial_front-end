@@ -7,6 +7,7 @@ export interface Paciente{
     data_nascimento: Date;
     idade: number;
     sexo: string;
+    n_atendimentos: number;
 }
 
 export interface Endereco{

@@ -92,6 +92,7 @@ const cadastro_paciente = () => {
       data_nascimento: dataNascimento as unknown as Date,
       idade: idade as unknown as number,
       sexo: sexo as string,
+      n_atendimentos: 0,
     }
 
     const novoEndereco:Endereco = {
