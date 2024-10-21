@@ -1,3 +1,5 @@
+"use client"
+
 import { CiSearch } from "react-icons/ci";
 import { FaRegFileAlt } from "react-icons/fa";
 import { MdOutlineSort } from "react-icons/md";
@@ -20,6 +22,12 @@ import {
 import Link from "next/link";
 import { FiFileText } from "react-icons/fi";
 
+import { useEffect, useState } from "react";
+import { Paciente } from "../components/dataLocal";
+
+
+
+/*
 const patients = [
     { id: 45, name: 'Andrey de Oliveira S...', numero: 84856, status: 'Concluído' },
     { id: 46, name: 'Andrey de Oliveira S...', numero: 84856, status: 'Pendência' },
@@ -30,6 +38,8 @@ const patients = [
     { id: 51, name: 'Andrey de Oliveira S...', numero: 84856, status: 'Concluído' },
     { id: 52, name: 'Andrey de Oliveira S...', numero: 84856, status: 'Concluído' },
 ];
+*/
+
 
 function getStatusClass(status: string) {
     switch (status) {
@@ -44,7 +54,28 @@ function getStatusClass(status: string) {
     }
 }
 
+
+
 const paciente = () => {
+    const [patients, setPatients] = useState<Paciente[]>([]);
+
+    function loadDados(){
+        const Dados = localStorage.getItem('pacienteData');
+        const json = JSON.parse(`[${Dados}]`);
+    
+        
+        json.forEach((i:Paciente)=>{
+            setPatients((jsonAntigo) => [...jsonAntigo, i]);
+        })
+    
+    }
+    
+    useEffect(()=>{
+
+        return () => {
+            loadDados();
+          };
+    },[])
 
     return (
 
@@ -104,16 +135,16 @@ const paciente = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {patients.map((patient) => (
-                            <tr className="bg-[#FFFFFF]" key={patient.id}>
-                                <td className="flex flex-row-reverse justify-end gap-[5px]">{patient.id}
+                        {patients.map((patient:Paciente, index:number) => (
+                            <tr className="bg-[#FFFFFF]" key={index + 1}>
+                                <td className="flex flex-row-reverse justify-end gap-[5px]"> {index + 1}
                                     <div className=" w-[20px] h-[20px] border-2 border-[#CED2DA] rounded-[8px] ml-[1.8rem]"></div>
                                 </td>
-                                <td className="p-2">{patient.name}</td>
-                                <td className="p-2">{patient.numero}</td>
+                                <td className="p-2">{patient.nome}</td>
+                                <td className="p-2">numero</td>
                                 <td className="p-2">
-                                    <span className={`p-1 rounded ${getStatusClass(patient.status)}`}>
-                                        {patient.status}
+                                    <span className={`p-1 rounded ${getStatusClass('Pendência')}`}>
+                                        Pendência
                                     </span>
                                 </td>
                                 <td className="p-2 pr-[20px] flex justify-end items-center gap-[1rem]">

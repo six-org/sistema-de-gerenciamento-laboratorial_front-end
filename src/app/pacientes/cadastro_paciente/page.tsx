@@ -22,23 +22,36 @@ import {
 import { FiFileText } from "react-icons/fi";
 
 /** Dados Locais */
-import { Paciente, Endereco, Contato } from "@/app/components/dataLocal";
+import { Paciente, Endereco, Contato, DadosMedicos } from "@/app/components/dataLocal";
 
 
 /** Componentes */
 import { Select_Cadastro_Paciente_Primary } from "./components/select_cadastro_paciente";
 import Link from "next/link";
 
+import { useState } from 'react';
 
 const cadastro_paciente = () => {
 
   /** Função para adicionar o paciente no localStorage */
-  const savePaciente = (dados:Paciente) =>{
-    localStorage.setItem('pacienteData', JSON.stringify(dados));
+  const savePaciente = (dados:Paciente, endereco:Endereco, contato:Contato, dadosMedicos:DadosMedicos) =>{
+    
+
+    const paciente = localStorage.getItem('pacienteData');
+    let pacienteString = '';
+    if(paciente){
+      pacienteString = `${paciente},`;
+    }
+    pacienteString = `${pacienteString}${JSON.stringify(dados)}`;
+    localStorage.setItem('pacienteData', pacienteString);
+    localStorage.setItem('enderecoData', JSON.stringify(endereco));
+    localStorage.setItem('contatoData', JSON.stringify(contato));
+    localStorage.setItem('dadosMedicosData', JSON.stringify(dadosMedicos));
   } 
 
 
   const submitPaciente = (event:any) =>{
+    
     event.preventDefault();
 
     const dados = new FormData(event.target);
@@ -64,8 +77,13 @@ const cadastro_paciente = () => {
     const telefone = dados.get('contato-telefone');
     const email = dados.get('contato-email');
 
-
-
+    /** Dados Paciente */
+    const tipoSangueneo = dados.get('dado-tipo-sanguineo');
+    const peso = dados.get('dado-peso');
+    const altura = dados.get('dado-altura');
+    const alergias = dados.get('dado-alergia');
+    const doencasPreexistentes = dados.get('dado-doencas-preexistentes');
+    const medicamentoEmUso = dados.get('dado-medicamentos-em-uso');
 
     const novoPaciente:Paciente = {
       nome: nome as string,
@@ -93,13 +111,22 @@ const cadastro_paciente = () => {
       telefone: telefone as string,
     }
 
-    console.log(novoEndereco);
+    const novoDadoMedico:DadosMedicos = {
+      pessoa: novoPaciente as Paciente,
+      tipoSangueneo: tipoSangueneo as string,
+      altura: altura as unknown as number,
+      peso: peso as unknown as number,
+      alergias: alergias as string,
+      doencasPreexistentes: doencasPreexistentes as string,
+      medicamentosEmUso: medicamentoEmUso as string,
+    }
 
     
+    /** Enviando dados para o localhost SEM tratamento */
+    savePaciente(novoPaciente, novoEndereco, novoContato, novoDadoMedico);
 
 
-
-
+    window.location.href = '/pacientes'; 
   }
 
 
@@ -320,7 +347,7 @@ const cadastro_paciente = () => {
               <div className="grid grid-cols-4 gap-[24px] mt-[1.5rem]">
                 <div>
                 <label className="font-normal text-base text-grey-700 flex">Tipo Sanguíneo<p className="text-[#FF0000]">*</p></label>
-                  <Select>
+                  <Select name="dado-tipo-sanguineo">
                     <SelectTrigger className="w-full h-[48px] border-[#D0D5DD] text-grey-400">
                       <SelectValue placeholder="Selecione o tipo sanguíneo" />
                     </SelectTrigger>
@@ -343,6 +370,7 @@ const cadastro_paciente = () => {
                     className="h-[3rem] focus:outline-primary-pure focus-visible:outline-primary-pure focus-visible:text-primary-pure border-[#D0D5DD]"
                     type="text"
                     placeholder="96Kg"
+                    name="dado-peso"
                   />
                 </div>
 
@@ -352,6 +380,7 @@ const cadastro_paciente = () => {
                     className="h-[3rem] focus:outline-primary-pure focus-visible:outline-primary-pure focus-visible:text-primary-pure border-[#D0D5DD]"
                     type="text"
                     placeholder="1,76"
+                    name="dado-altura"
                   />
                 </div>
 
@@ -361,6 +390,7 @@ const cadastro_paciente = () => {
                     className="h-[3rem] focus:outline-primary-pure focus-visible:outline-primary-pure focus-visible:text-primary-pure border-[#D0D5DD]"
                     type="text"
                     placeholder="Digite sua alergia..."
+                    name="dado-alergia"
                   />
                 </div>
 
@@ -370,6 +400,7 @@ const cadastro_paciente = () => {
                     className="h-[3rem] focus:outline-primary-pure focus-visible:outline-primary-pure focus-visible:text-primary-pure border-[#D0D5DD]"
                     type="text"
                     placeholder="Digite sua doença..."
+                    name="dado-doencas-preexistentes"
                   />
                 </div>
 
@@ -379,6 +410,7 @@ const cadastro_paciente = () => {
                     className="h-[3rem] focus:outline-primary-pure focus-visible:outline-primary-pure focus-visible:text-primary-pure  border-[#D0D5DD]"
                     type="text"
                     placeholder="Digite seus medicamentos"
+                    name="dado-medicamentos-em-uso"
                   />
                 </div>
               </div>
