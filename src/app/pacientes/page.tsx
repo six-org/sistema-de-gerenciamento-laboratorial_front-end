@@ -56,7 +56,7 @@ function getStatusClass(status: string) {
 
 
 
-const paciente = () => {
+const PagePaciente = () => {
     const [patients, setPatients] = useState<Paciente[]>([]);
 
     function loadDados(){
@@ -178,4 +178,4 @@ const paciente = () => {
     )
 }
 
-export default paciente;
+export default PagePaciente;

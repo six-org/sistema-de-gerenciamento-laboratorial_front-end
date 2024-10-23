@@ -88,7 +88,7 @@ const Suporte = () => {
               <Accordion type="single" collapsible className="space-y-4 p-2">
 
                 {faq.map((value, index)=>(
-                  <AccordionItem value={`item-${index}`} className="border rounded-lg border-[#E4E7EC] text-[#48505E] p-4">
+                  <AccordionItem key={index} value={`item-${index}`} className="border rounded-lg border-[#E4E7EC] text-[#48505E] p-4">
                     <AccordionTrigger><p className="max-w-[400px] text-start">{value.pergunta}</p></AccordionTrigger>
                     <AccordionContent className="text-[#858D9D]">
                       <hr className="text-[#E4E7EC] mb-4" />
